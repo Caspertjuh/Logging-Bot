@@ -55,6 +55,6 @@ License is found inside the repostory
 
 ## 3th party Code i have used
 
-Discord.js
-CSV-Parser
-CSV-Writer
+- Discord.js
+- CSV-Parser
+- CSV-Writer
