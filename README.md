@@ -1,4 +1,4 @@
-# Project Name
+# Logging Bot
 
 This is a Discord bot that performs various functions in response to user commands. The bot is written in JavaScript and uses the Discord.js library.
 
