@@ -11,6 +11,10 @@ const intents = [
 
 const client = new Discord.Client({ intents });
 
+client.on("guildMemberAdd", (member) => {
+  require('./welcome.js').execute(member);
+});
+
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
   client.user.setActivity(`Serving ${client.guilds.cache.size} servers`);
@@ -57,8 +61,14 @@ client.on("messageCreate", async message => {
     case 'locations':
       require('./Locations.js')(message, args);
       break;
+    case 'restart':
+      require('./res.js')(message, args);
+      break;
     case 'help':
       require('./help.js')(message, args);
+      break;
+    case 'welcome':
+      require('./welcome.js').execute(message, args);
       break;
     case 'stop':
     if (!message.member.roles.cache.some(role => role.name === 'Bot-Person')) {
